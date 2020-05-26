@@ -99,3 +99,4 @@ ENV/
 
 # mypy
 .mypy_cache/
+examples/SCPI_Dimmer/SCPI_Dimmer.ino
