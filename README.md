@@ -1,21 +1,42 @@
-# Vrekrer scpi parser
-A simple [SCPI](https://en.wikipedia.org/wiki/Standard_Commands_for_Programmable_Instruments) parser for small Arduino projects.
+# SCPI Stepper motor controller
+Simple SCPI Stepper motor controller using Vrekrer scpi parser.
+I needed to controll 3 motors with linear stages with very crude coding skill.
+So I made different command set for each axis - I will modify that later. 
 
-## Features
-- Small memory footprint, implemented for reduced RAM usage.
-- Minimal, clean code API.
-- Can process char* strings or input from any [Stream](https://www.arduino.cc/reference/en/language/functions/communication/stream/) interface like [Serial](https://www.arduino.cc/reference/en/language/functions/communication/serial) or [Ethernet](https://www.arduino.cc/en/Reference/Ethernet).
-- Flash strings ([F() macro](https://www.arduino.cc/reference/en/language/variables/utilities/progmem/#_the_f_macro)) support for lower RAM usage.
+This is the list of commands. 
 
+## *IDN? 
+Device identification. 
 
-## SCPI features:
- - Commands defined using stings  
-   E.g. `"MEASure:VOLTage:DC?"`
- - Short and long token forms, and upper and lower case commands  
-   E.g. `"MEASURE:VOLTAGE:DC?"`, `"meas:VoLt:DC?"`
- - Numeric suffixes using the `#` character:  
-   E.g. definition : `"CHANnel#:SELect"`  
-   E.g. usage : `"CHAN0:SEL"`, `"chan5:sel"`, `"chan13:sel"`
- - Comma separated parameters recognition.
- - Parameters treated as text, processed by the user program.
+## MOTOr:XMOVe STEP\#
+Revolve X axis (axis 1) step motor with designated step numer. 
+## MOTOr:XLOCation STEP\# 
+Set X axis (axis 1) location in step unit.
+## MOTOr:XLOCation? 
+Get X axis (axis 1) location in step unit.
+## MOTOr:XSPEed SPEED\#
+Set X axis (axis 1) location in RPM unit.
+## MOTOr:XSPEed?
+Get X axis (axis 1) location in RPM unit.
 
+## MOTOr:YMOVe STEP\#
+Revolve Y axis (axis 1) step motor with designated step numer. 
+## MOTOr:YLOCation STEP\# 
+Set Y axis (axis 1) location in step unit.
+## MOTOr:YLOCation? 
+Get Y axis (axis 1) location in step unit.
+## MOTOr:YSPEed SPEED\#
+Set Y axis (axis 1) location in RPM unit.
+## MOTOr:YSPEed?
+Get Y axis (axis 1) location in RPM unit.
+
+## MOTOr:ZMOVe STEP\#
+Revolve Z axis (axis 1) step motor with designated step numer. 
+## MOTOr:ZLOCation STEP\# 
+Set Z axis (axis 1) location in step unit.
+## MOTOr:ZLOCation? 
+Get Z axis (axis 1) location in step unit.
+## MOTOr:ZSPEed SPEED\#
+Set Z axis (axis 1) location in RPM unit.
+## MOTOr:ZSPEed?
+Get Z axis (axis 1) location in RPM unit.
